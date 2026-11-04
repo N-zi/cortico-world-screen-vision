@@ -1,0 +1,23 @@
+node_modules/
+*.log
+
+# Local secrets and machine-specific configuration
+.env
+.env.*
+!.env.example
+config.json
+config.local.*
+*.local.json
+
+# Captures and temporary debug artifacts
+captures/
+screenshots/
+tmp/
+temp/
+*.tmp
+
+# Editor and operating-system metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

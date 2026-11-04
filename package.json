@@ -1,0 +1,39 @@
+{
+  "name": "cortico-world-screen-vision",
+  "version": "0.2.1",
+  "type": "module",
+  "description": "A privacy-conscious Cortico World that lets Coo inspect a selected Windows screen or window with a separate OpenAI-compatible vision model",
+  "license": "MIT",
+  "keywords": ["cortico-world", "cortico"],
+  "os": ["win32"],
+  "engines": { "node": ">=22" },
+  "packageManager": "pnpm@11.28.6",
+  "main": "./src/index.ts",
+  "cortico": {
+    "kind": "world",
+    "api": 6,
+    "displayName": "Screen Vision",
+    "tags": ["internet", "image", "experimental", "sensitive-data", "injection-risk"],
+    "describe": "describe.json",
+    "webUiClient": "dist/webui.js"
+  },
+  "files": ["src", "dist", "README.md", "CHANGELOG.md", "LICENSE", "THIRD_PARTY_NOTICES.md", "describe.json"],
+  "scripts": {
+    "build": "esbuild src/webui/client.ts --bundle --format=esm --platform=browser --outfile=dist/webui.js",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.web.json --noEmit"
+  },
+  "dependencies": {
+    "koffi": "^2.15.2",
+    "pngjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/pngjs": "^6.0.5",
+    "cortico": "^0.2.12",
+    "esbuild": "^0.25.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
